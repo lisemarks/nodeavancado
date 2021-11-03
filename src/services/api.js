@@ -31,3 +31,21 @@ export async function authenticate(login, password) {
   console.log("Login");
   return response;
 }
+
+export async function deleteMovie(id) {
+  const response = await api.delete(`/movies/${id}`);
+  console.log("Movie Deleted", response);
+  return response;
+}
+
+export async function updateMovie(id, data) {
+  const response = await api.put(`/movies/${id}`, data);
+  console.log("Movie Updated", response);
+  return response;
+}
+
+export async function getSingleMovies(id) {
+  const response = await api.get(`/movies/${id}`);
+  console.log("Get Movies", response);
+  return response;
+}
